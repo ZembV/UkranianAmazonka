@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Українська амазонка</title>
+    <meta name="description" content="Курси самозахисту для жінок, щоб почувати захищеними">
+    <link rel="stylesheet" type="text/css" href="lab.css">
+</head>
+<body>
+<header>
+    <div class="image-container">
+        <img src="main.png" alt="main png" class="main-img">
+        <div class="main-image-text">Українська амазонка</div>
+        <div class="menu-icon" onclick="toggleMenu()">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+
+        <div class="side-menu">
+            <ul>
+                <li><a href="#about-us" onclick="closeMenu()">Про нас</a></li>
+                <li><a href="#course-selection" onclick="closeMenu()">Вибір курсу</a></li>
+                <li><a href="#register" onclick="closeMenu()">Зареєструватись</a></li>
+                <li><a href="#reviews" onclick="closeMenu()">Відгуки</a></li>
+                <li><a href="#q-and-a" onclick="closeMenu()">Питання та відповіді</a></li>
+                <li><a href="#map" onclick="closeMenu()">Ми на карті</a></li>
+                <li><a href="#social-media" onclick="closeMenu()">Ми у соціальних мережах</a></li>
+            </ul>
+        </div>
+
+    </div>
+</header>
+<main>
+    <div class="main-container">
+        <img class="left-pattern" src="pattern.png" alt="left pattern">
+        <div class="text-content">
+            <section>
+                <video poster="video.png" id="videoPlayer" autoplay muted class="main-img-video">
+                    <source src="УА.mp4" type="video/mp4">
+                    Ваш браузер не підтримує відтворення відео.
+                </video>
+                <button id="toggleAudio">Увімкнути звук</button>
+
+                <p class="text" id="about-us">У сучасних умовах конфлікту з Росією важливо розуміти, що здатність захистити себе є надзвичайно важливою для нашої перемоги. Ми всі пам'ятаємо, як наші землі були деокуповані, і давно стало очевидним, що окупанти використовують насильство як засіб підкорення, включаючи зґвалтування жінок незалежно від їх віку. Тому я вважаю, що ми повинні об'єднатися і стати сильнішими, щоб захистити себе та свої рідних. Мій сайт пропонує курси самозахисту для жінок, які допоможуть вам відчувати себе впевненіше і бути готовими відстояти себе у будь-яких ситуаціях. Разом ми зможемо досягти перемоги. Приєднуйтеся до нас, Українські амазонки, і будьмо сильні разом!</p>
+            </section>
+            <section>
+                <div class="circle-container" id="course-selection">
+                    <div class="circle" style="box-shadow: 30px 30px 4px rgba(0, 0, 0, 0.5);">
+                        <div class="circle-content">
+                            <h2>Захист себе:</h2>
+                            <ul>
+                                <li>Перша домедична допомога</li>
+                                <li>Основи роботи з предметами</li>
+                                <li>Межі та форми самозахисту</li>
+                                <li>Психологічна стійкість</li>
+                                <li>Звільнення від захватів</li>
+                                <li>М-М.Д.Д.Ц.Г</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="circle" style="box-shadow: 30px 30px 4px rgba(0, 0, 0, 0.5);">
+                        <div class="circle-content">
+                            <h2>Захист країни:</h2>
+                            <ul>
+                                <li>Військова тактика</li>
+                                <li>Курс молодої бійчині</li>
+                                <li>Поводження зі зброєю</li>
+                                <li>Стрільба на полігоні</li>
+                                <li>Основи топографії</li>
+                                <li>Операторка БПЛА</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="register">
+                <div class="sing-up-images">
+                    <img src="sing up1.jpg" alt="Sing up left" class="sing-up-image">
+                    <img src="sing up2.jpg" alt="Sing up right" class="sing-up-image">
+                </div>
+            </section>
+            <section>
+                <div class="button-container">
+                    <button class="custom-button button-left" onclick="openForm('course1')">Зареєструватись</button>
+                    <button class="custom-button button-right" onclick="openForm('course2')">Зареєструватись</button>
+                </div>
+                <div id="course1-form" class="registration-form" style="display: none;">
+                    <h2>Вітаємо!</h2>
+                    <h3>Будь ласка, введіть свої контактні дані, щоб ми могли з Вами зв'язатись</h3>
+                    <form onsubmit="return validateForm('course1')">
+                        <div class="form-group">
+                            <label>
+                                <input type="text" name="full_name" placeholder="ПІБ">
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone"><input type="text" name="phone" placeholder="Телефон" id="phone"></label>
+                            <span id="phone-error" class="error-message"></span>
+                        </div>
+                        <div class="form-group">
+                            <label>
+                                <input type="email" name="email" placeholder="Email">
+                            </label>
+                        </div>
+                        <button type="button" onclick="closeForm('course1')">Закрити</button>
+                        <button type="submit">Записатися</button>
+                    </form>
+                </div>
+                <div id="course2-form" class="registration-form" style="display: none;">
+                    <h2>Вітаємо!</h2>
+                    <h3>Будь ласка, введіть свої контактні дані, щоб ми могли з Вами зв'язатись</h3>
+                    <form onsubmit="return validateForm('course2')">
+                        <div class="form-group">
+                            <label>
+                                <input type="text" name="full_name" placeholder="ПІБ">
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone2"><input type="text" name="phone" placeholder="Телефон" id="phone2"></label>
+                            <span id="phone-error2" class="error-message"></span>
+                        </div>
+                        <div class="form-group">
+                            <label>
+                                <input type="email" name="email" placeholder="Email">
+                            </label>
+                        </div>
+                        <!-- Інші поля для реєстрації на Курс 2 тут -->
+                        <button type="button" onclick="closeForm('course2')">Закрити</button>
+                        <button type="submit" onclick="validateForm('course2')">Записатися</button>
+                    </form>
+                </div>
+            </section>
+            <section>
+                <div class="price-container">
+                    <div class="price-container-top">
+                    <div class="price-block">
+                        <h2>Базовий пакет "Захист себе"</h2>
+                        <p>$50</p>
+                        <ul>
+                            <li>Перша домедична допомога</li>
+                            <li>Основи роботи з предметами</li>
+                            <li>Межі та форми самозахисту</li>
+                            <li>Психологічна стійкість</li>
+                        </ul>
+                        <button class="order-button">Замовити зараз</button>
+                    </div>
+
+                    <div class="price-block">
+                        <h2>Розширений пакет "Захист себе+"</h2>
+                        <p>$80</p>
+                        <ul>
+                            <li>Включає всі курси з базового пакета "Захист себе"</li>
+                            <li>Звільнення від захвату</li>
+                            <li>Методи самозахисту у небезпечних ситуаціях</li>
+                        </ul>
+                        <button class="order-button">Замовити зараз</button>
+                    </div>
+                    </div>
+                    <div class="price-container-down">
+                    <div class="price-block">
+                        <h2>Базовий пакет "Захист країни"</h2>
+                        <p>$60</p>
+                        <ul>
+                            <li>Військова тактика</li>
+                            <li>Курс молодої бійчині</li>
+                            <li>Поводження зі зброєю</li>
+                            <li>Стрільба на полігоні</li>
+                        </ul>
+                        <button class="order-button">Замовити зараз</button>
+                    </div>
+
+                    <div class="price-block">
+                        <h2>Розширений пакет "Захист країни+"</h2>
+                        <p>$100</p>
+                        <ul>
+                            <li>Включає всі курси з базового пакета "Захист країни"</li>
+                            <li>Основи топографії</li>
+                            <li>Операторка БПЛА (безпілотний літальний апарат)</li>
+                        </ul>
+                        <button class="order-button">Замовити зараз</button>
+                    </div>
+                </div>
+                </div>
+            </section>
+            <section id="reviews">
+                <p class="text-blue-reviews">ВІДГУКИ САМОДОСТАТНІХ ЖІНОК</p>
+                <div class="reviews-blue-container">
+                    <div class="reviews-blue-left">
+                        <img src="відгуки1.1.png" alt="reviews-blue-left">
+                        <p>Курси самооборони були для мене дуже корисними. Я вчилася впевнено та правильно надавати першу допомогу у випадках травм. Окрім цього, вивчення основ роботи з предметами допомогло мені зрозуміти, як використовувати навколишні речі для своєї безпеки. Навички самозахисту та психологічної стійкості дали мені впевненість у собі й знання, як поводитися в стресових ситуаціях.</p>
+                    </div>
+                    <div class="reviews-blue-right">
+                        <img src="відгуки 1.2.png" alt="reviews-blue-right">
+                        <p>Пройшла курси самооборони й зараз відчуваю себе набагато сильніше та впевненіше. Ми докладно вивчали методи звільнення від захвату та техніки М-М.Д.Д.Ц.Г що дає велику перевагу у випадку нападу та нещасних ситуацій. Тепер, якщо щось станеться, я знаю як надавати першу медичну допомогу та, якщо якийсь чоловік вирішить, що може просто взяти мене, я сміливо дам йому відсіч.</p>
+                    </div>
+                </div>
+                <div class="reviews-blue-center-container">
+                    <div class="reviews-blue-center">
+                        <img src="відгуки1.3.png" alt="reviews-blue-center">
+                        <p>Курс самооборони став для мене не тільки можливістю навчитися захищати себе, але й способом підняти свою самооцінку. Навички, які я отримала, виявилися дуже корисними у різних аспектах життя. Я вчилася реагувати на стресові ситуації з більшою стійкістю та самовпевненістю. Також, знання про першу допомогу вже не раз виручали мене і моїх друзів. Дякую і рекомендую цей курс всім жінкам</p>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <p class="text-red-reviews">Відгуки Героїнь</p>
+                <div class="reviews-red-container">
+                    <div class="reviews-red-left">
+                        <img src="відгуки 2.1.png" alt="reviews-red-left">
+                        <p>Я завжди мріяла про можливість дати свій внесок у захист України, і курс самооборони став мені в пригоді. Вивчення військової тактики та курсу молодої бійчині дали мені навички, які необхідні для захисту нашої країни. Я вчилася користуватися зброєю та стріляти на полігоні, і це було надзвичайно захопливо та корисно. Основи топографії та навички операторки БПЛА роблять мене більш ефективною та допомагають аналізувати ситуацію на місцях. Тепер я на фронті та віддаю все, що маю для перемоги України.</p>
+                    </div>
+                    <div class="reviews-red-right">
+                        <img src="відгуки 2.2.png" alt="reviews-red-right">
+                        <p>Цей курс став для мене дійсною можливістю набути військових навичок і готуватися до захисту України. Ми вивчали тактику, стрільбу та основи поводження зі зброєю, що було дуже цікаво і корисно. Основи топографії та навички операторки БПЛА дали мені можливість краще розуміти ситуацію на місцях і сприяли ефективному захисту. Дякую цьому курсу за можливість навчитися і бути готовою захистити нашу країну в разі потреби.</p>
+                    </div>
+                </div>
+            </section>
+            <section id="q-and-a">
+                <p class="text-q-and-a">Питання та відповіді</p>
+                <div class="q1">
+                    <p>Питання 1: Для кого призначений цей курс?</p>
+                    <div class="shape-container">
+                        <div class="shape triangle1" id="triangle1"></div>
+                    </div>
+                    <div class="rectangle1" id="rectangle1">
+                        <p>Відповідь: Курс самооборони відкритий для всіх жінок, які бажають набути навичок самозахисту та готові внести свій внесок у захист України.</p>
+                    </div>
+                </div>
+                <div class="q2" id="q2">
+                    <p>Питання 2: Як довго триває курс та як часто проводяться заняття?</p>
+                    <div class="shape-container">
+                        <div class="shape triangle2" id="triangle2"></div>
+                    </div>
+                    <div class="rectangle2" id="rectangle2">
+                        <p>Відповідь: Курс триває залежно від обраного рівня підготовки, але ви зможете обирати розклад занять, який найкраще підходить вашим потребам.</p>
+                    </div>
+                </div>
+                <div class="q3" id="q3">
+                    <p>Питання 3: Чи надається сертифікат після закінчення курсу?</p>
+                    <div class="shape-container">
+                        <div class="shape triangle3" id="triangle3"></div>
+                    </div>
+                    <div class="rectangle3" id="rectangle3">
+                        <p>Відповідь: Так, кожна учасниця, яка успішно завершить курс, отримає сертифікат, який підтверджує її навички та підготовку.</p>
+                    </div>
+                </div>
+                <div class="q4" id="q4">
+                    <p>Питання 4: Як я можу записатися на курс та дізнатися більше інформації?</p>
+                    <div class="shape-container">
+                        <div class="shape triangle4" id="triangle4"></div>
+                    </div>
+                    <div class="rectangle4" id="rectangle4">
+                        <p>Відповідь: Для запису на курс та отримання додаткової інформації, будь ласка, звертайтеся до нашого вебсайту або контактуйте з нами через контактну інформацію, надану на сайті.</p>
+                    </div>
+                </div>
+            </section>
+            <footer>
+                <div class="white-rectangle" id="map">
+                    <img src="map.png" alt="map" class="map-png">
+                    <div class="footer" id="social-media">
+                        <p class="footer-img ">Українська амазонка</p>
+                        <div class="link">
+                            <div class="insta">
+                                <img src="insta.png" alt="insta">
+                                <p>@ukr.amazonka</p>
+                            </div>
+                            <div class="WhatsApp">
+                                <img src="WhatsApp.png" alt="WhatsApp">
+                                <p>+380653424472</p>
+                            </div>
+                            <div class="phone">
+                                <img src="phone.png" alt="phone">
+                                <p>+380639562851</p>
+                            </div>
+                            <div class="email">
+                                <img src="email.png" alt="email">
+                                <p>@ukr.amazonka</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        <img class="right-pattern" src="pattern.png" alt="right pattern">
+    </div>
+</main>
+<script src="lab.js"></script>
+</body>
+</html>
